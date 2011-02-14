@@ -2,7 +2,7 @@ use strict;
 use warnings;
 package Dist::Zilla::PluginBundle::CEBJYRE;
 BEGIN {
-  $Dist::Zilla::PluginBundle::CEBJYRE::VERSION = '0.0.1';
+  $Dist::Zilla::PluginBundle::CEBJYRE::VERSION = '0.1.0';
 }
 
 # ABSTRACT: My default dzil plugins
@@ -24,10 +24,8 @@ sub configure {
     CheckPrereqsIndexed
   ));
 
-  $self->add_bundle(
-    'Basic',
-    'Git',
-  );
+  $self->add_bundle('Basic');
+  $self->add_bundle('Git');
 }
 
 __PACKAGE__->meta->make_immutable;
@@ -44,7 +42,7 @@ Dist::Zilla::PluginBundle::CEBJYRE - My default dzil plugins
 
 =head1 VERSION
 
-version 0.0.1
+version 0.1.0
 
 =head1 DESCRIPTION
 

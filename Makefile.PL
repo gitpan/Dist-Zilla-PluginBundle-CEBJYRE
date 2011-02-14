@@ -12,6 +12,7 @@ my %WriteMakefileArgs = (
   'ABSTRACT' => 'My default dzil plugins',
   'AUTHOR' => 'Glenn Fowler <cebjyre@cpan.org>',
   'BUILD_REQUIRES' => {
+    'Test::DZil' => '0',
     'Test::More' => '0'
   },
   'CONFIGURE_REQUIRES' => {
@@ -25,7 +26,7 @@ my %WriteMakefileArgs = (
     'Dist::Zilla::Role::PluginBundle::Easy' => '0',
     'Moose' => '0'
   },
-  'VERSION' => '0.0.1',
+  'VERSION' => '0.1.0',
   'test' => {
     'TESTS' => 't/*.t'
   }
