@@ -1,8 +1,8 @@
 use strict;
 use warnings;
 package Dist::Zilla::PluginBundle::CEBJYRE;
-BEGIN {
-  $Dist::Zilla::PluginBundle::CEBJYRE::VERSION = '0.1.1';
+{
+  $Dist::Zilla::PluginBundle::CEBJYRE::VERSION = '0.2.0';
 }
 
 # ABSTRACT: My default dzil plugins
@@ -23,6 +23,7 @@ use Dist::Zilla::PluginBundle::Git;
 
 sub configure {
   my $self = shift;
+  my $payload = $self->payload;
 
   $self->add_plugins(qw(
     PkgVersion
@@ -35,7 +36,8 @@ sub configure {
   ));
 
   $self->add_bundle('Basic');
-  $self->add_bundle('Git');
+  my %git_config = map {substr($_, 4) => $payload->{$_}} grep {/^git_/} keys %$payload;
+  $self->add_bundle(Git => \%git_config);
 }
 
 __PACKAGE__->meta->make_immutable;
@@ -52,7 +54,7 @@ Dist::Zilla::PluginBundle::CEBJYRE - My default dzil plugins
 
 =head1 VERSION
 
-version 0.1.1
+version 0.2.0
 
 =head1 DESCRIPTION
 
@@ -67,6 +69,15 @@ Using this bundle is equivalent to:
   [CheckPrereqsIndexed]
   [@Basic]
   [@Git]
+
+Configurations options may be passed into the Git bundle
+(currently this is the only one supported) by prefacing
+the usual option names with C<git_>.
+
+For example:
+
+  [@CEBJYRE]
+  git_push_to = github
 
 =head1 METHODS
 

@@ -4,7 +4,7 @@ use warnings;
 
 
 
-use ExtUtils::MakeMaker 6.31;
+use ExtUtils::MakeMaker 6.30;
 
 
 
@@ -16,7 +16,7 @@ my %WriteMakefileArgs = (
     'Test::More' => '0'
   },
   'CONFIGURE_REQUIRES' => {
-    'ExtUtils::MakeMaker' => '6.31'
+    'ExtUtils::MakeMaker' => '6.30'
   },
   'DISTNAME' => 'Dist-Zilla-PluginBundle-CEBJYRE',
   'EXE_FILES' => [],
@@ -35,7 +35,7 @@ my %WriteMakefileArgs = (
     'Dist::Zilla::Role::PluginBundle::Easy' => '0',
     'Moose' => '0'
   },
-  'VERSION' => '0.1.1',
+  'VERSION' => '0.2.0',
   'test' => {
     'TESTS' => 't/*.t'
   }
