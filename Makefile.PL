@@ -25,19 +25,21 @@ my %WriteMakefileArgs = (
   "PREREQ_PM" => {
     "Dist::Zilla::Plugin::AutoPrereqs" => 0,
     "Dist::Zilla::Plugin::CheckPrereqsIndexed" => 0,
+    "Dist::Zilla::Plugin::MetaJSON" => 0,
     "Dist::Zilla::Plugin::NextRelease" => 0,
     "Dist::Zilla::Plugin::PkgVersion" => 0,
     "Dist::Zilla::Plugin::PodCoverageTests" => 0,
     "Dist::Zilla::Plugin::PodSyntaxTests" => 0,
     "Dist::Zilla::Plugin::PodWeaver" => 0,
     "Dist::Zilla::PluginBundle::Basic" => 0,
+    "Dist::Zilla::PluginBundle::Filter" => 0,
     "Dist::Zilla::PluginBundle::Git" => 0,
     "Dist::Zilla::Role::PluginBundle::Easy" => 0,
     "Moose" => 0,
     "strict" => 0,
     "warnings" => 0
   },
-  "VERSION" => "0.3.0",
+  "VERSION" => "0.4.0",
   "test" => {
     "TESTS" => "t/*.t"
   }
